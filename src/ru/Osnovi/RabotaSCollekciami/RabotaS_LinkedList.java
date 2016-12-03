@@ -13,15 +13,19 @@ public class RabotaS_LinkedList {
 
     } // конец майна
 
-    public  static void VividLista(List list){
+    public  static void zapolnenieLista(List list){
         System.out.println("Вывод содержимого ");
 
         for (Object str : list){
             list.add(str);
         }
-
     }
 
+    public static void vividLista (List list){
+        for (Object str: list){
+            System.out.println(str);
+        }
+    }
 
 
 } // конец класса
