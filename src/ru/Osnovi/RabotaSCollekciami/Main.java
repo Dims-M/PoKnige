@@ -19,6 +19,8 @@ class Main1 {
         //   long factoria1i2 =  vsakoRazno.moyAlterFactorial(5);
         //   System.out.println("f"+factoria1i2);
 
+
+
     } // конец метода майн
 
 
