@@ -1,6 +1,5 @@
 package ru.Osnovi.RabotaSCollekciami;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -14,10 +13,14 @@ public class RabotaS_LinkedList {
 
         String [] zveri ={"кот","пингвин","волк","ежигг","дракон"};
         String [] zveri1 ={"удав","волк","ЕжиК","Ниблнр"};
+        String [] planet ={"Земля","Марс","Венера","Сатурн"};
 
         String [] kriminalChivo = {"Мия ","Джулс ","Винсенс ","Марселлас ","Бутч"};
 
         Character [] simvoli = {'П','Р','И','В','Е','Т',};
+
+        Integer [] number = new Integer[10];
+        int [] numberInt = new int[10];
 
         LinkedList linkedListSimvol = new LinkedList(Arrays.asList(simvoli));
 
@@ -28,7 +31,16 @@ public class RabotaS_LinkedList {
         LinkedList zveriList =  new LinkedList(Arrays.asList(zveri));
         LinkedList zveriList22 =  new LinkedList(Arrays.asList(zveri1));
 
+        LinkedList<String>  planetList = new LinkedList( Arrays.asList(planet));
+        ArrayList<String> planetList2 = new ArrayList<String>();
+        planetList2.add("Уран");
+        planetList2.add("Меркурий");
+        planetList2.add("Юпитер");
+        planetList2.add("Нептун");
+
+
         List<Character> pustoi = new LinkedList<>();
+        List<Integer> chislo = Arrays.asList(number);
 
         // Дакже мы всегда можем добавить в лист новое значение в конец списка
         linkedList123.add("Кунц");
@@ -85,10 +97,10 @@ public class RabotaS_LinkedList {
         addZnachFerst(linkedList123,"Персонажи фильма 'Криминальное чтиво':");
         vividLista((LinkedList) linkedList123);
         vividRazdelitela();
-        vividЬффышa(kriminalChivo);
+       // vividЬффышa(kriminalChivo);
         vividRazdelitela();
         konxertationListV_Massiv(kriminalChivo,linkedList123);
-        vividЬффышa(kriminalChivo);
+      //  vividЬффышa(kriminalChivo);
         vividRazdelitela();
         vividSimvolov(linkedListSimvol);
         System.out.println( konxertationListV_MassivCharacter(simvoli,linkedListSimvol));
@@ -126,6 +138,36 @@ public class RabotaS_LinkedList {
         deleteMetod(zveriList22,1);
         vividLista(zveriList22);
 
+        vividRazdelitela();
+        randomIntod(number);
+      //  vividINTA(number);
+        vividRazdelitela();
+        // Сортировка массива(int)
+        Collections.sort(chislo);
+       //vividINTA(number);
+
+        vividRazdelitela();
+        randomIntodINT(numberInt);
+        vividINTA(numberInt);
+        vividRazdelitela();
+        sortirovkaInta(numberInt);
+      // vividINTA(number);
+        vividINTA(numberInt);
+        vividRazdelitela();
+
+        vividLista(planetList);
+        vividRazdelitela();
+        vividЬффышa(planetList2);
+        vividRazdelitela();
+        Collections.addAll(planetList2, planet);
+        vividЬффышa(planetList2);
+        vividRazdelitela();
+        planetList2.add(0,"Уранн");
+        vividЬффышa(planetList2);
+        Collections.replaceAll(planetList2,"Сатурн", "Уранов");
+        vividЬффышa(planetList2);
+
+
 
 
 
@@ -148,7 +190,15 @@ public class RabotaS_LinkedList {
         }
     }
 
-    public static void vividЬффышa (Object [] object){
+    //Вывод интового числа
+    public static void vividINTA (int [] ints){
+        for (int str: ints){
+            System.out.println(str);
+        }
+
+    }
+
+    public static void vividЬффышa (ArrayList<String> object){
         for (Object str: object){
             System.out.println(str);
         }
@@ -240,8 +290,11 @@ public class RabotaS_LinkedList {
     public static void deleteMetod(LinkedList list, int indexks){
         System.out.println("Удаляем явейку под индексом "+ indexks);
 
-        for (int i = 0; i < list.size(); i++){
+        if (list.contains("Ниблнр")){
+            System.out.println("Список содержит слово Ниблнр");
+        }
 
+        for (int i = 0; i < list.size(); i++){
             if (i == indexks){
                 System.out.println("Удаление ячейки завершено "+list.get(indexks));
                 list.remove(i);
@@ -265,5 +318,47 @@ public class RabotaS_LinkedList {
            System.out.println(ch);
        }
     }
+
+    // Генератор интовых значений
+
+    public static Integer [] randomIntod (Integer [] ints){
+        System.out.println("Заполнение случайными интовыми значениями");
+        Random random = new Random();
+
+        for (int i = 0; i<ints.length; i++ ){
+            int intTemp = random.nextInt(100) ;
+            ints[i] = intTemp;
+        }
+        return ints;
+    }
+
+    public static int [] randomIntodINT (int [] ints){
+        System.out.println("Заполнение случайными интовыми значениями");
+        Random random = new Random();
+
+        for (int i = 0; i<ints.length; i++ ){
+            int intTemp = random.nextInt(100) ;
+            ints[i] = intTemp;
+        }
+        return ints;
+    }
+
+    public static void sortirovkaInta(int [] ints) {
+        for (int i = ints.length - 1; i>0 ;  i--) {
+            for (int j = 0; j < i; j++) {
+
+                if (ints[j] > ints[j + 1]) {
+
+                    int temp = ints[j];
+                    ints[j] = ints[j + 1];
+                    ints[j + 1] = temp;
+
+                }
+            }
+
+        }
+    }
+
+
 
 } // конец класса
