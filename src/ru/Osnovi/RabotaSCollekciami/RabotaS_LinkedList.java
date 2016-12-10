@@ -8,6 +8,8 @@ import java.util.*;
  */
 public class RabotaS_LinkedList {
 
+    private static String u20A9;
+
     public static void main(String[] args) {
 
         String [] zveri ={"кот","пингвин","волк","ежигг","дракон"};
@@ -23,6 +25,10 @@ public class RabotaS_LinkedList {
         // Также можно передовать в Лист в качестве параметра Аррей лист
         LinkedList linkedList123 =  new LinkedList(Arrays.asList(kriminalChivo));
         LinkedList linkedListCon =  new LinkedList(Arrays.asList(kriminalChivo));
+        LinkedList zveriList =  new LinkedList(Arrays.asList(zveri));
+        LinkedList zveriList22 =  new LinkedList(Arrays.asList(zveri1));
+
+        List<Character> pustoi = new LinkedList<>();
 
         // Дакже мы всегда можем добавить в лист новое значение в конец списка
         linkedList123.add("Кунц");
@@ -34,11 +40,14 @@ public class RabotaS_LinkedList {
         kriminalChivo = (String[]) linkedList123.toArray(new String[linkedList123.size()]);
         // В переменную массива = приводим тип к листу. потом создаем стринговый массив с размером такойже как длина Листа
 
+        // Заполнение списка напрямую
+        Collections.fill(pustoi,'U');
 
         // линкин лист для хранения связанных списков
         LinkedList listZveri = new LinkedList<>();
         List<String> listZveri2 = new LinkedList<>();
         List<String> chivo = new LinkedList<>();
+      //  List<String> pustoi = new LinkedList<>();
 
         zapolnenieLista(zveri, (LinkedList) listZveri);
         vividRazdelitela();
@@ -85,9 +94,32 @@ public class RabotaS_LinkedList {
         System.out.println( konxertationListV_MassivCharacter(simvoli,linkedListSimvol));
         vividSimvolov(linkedListSimvol);
         reversList(linkedListSimvol);
-
-
-
+        vividRazdelitela();
+        System.out.println("Выод листа с помощью метода входящего в Collections.reverse");
+         Collections.reverse(linkedListSimvol);
+        vividSimvolov(linkedListSimvol);
+        Collections.reverse(linkedListSimvol);
+        vividSimvolov(linkedListSimvol);
+        vividRazdelitela();
+        vividLista(listZveri);
+        Collections.reverse(listZveri);
+        System.out.println("********");
+        vividLista(listZveri);
+        System.out.print(listZveri.size());
+        vividLista(zveriList22);
+        System.out.print(zveriList22.size());
+        System.out.println("********");
+        System.out.println("Копирование одного масства в другой ");
+        Collections.copy(zveriList,zveriList22);
+        vividLista(zveriList);
+        System.out.print(listZveri.size());
+        System.out.println("********");
+        vividLista(zveriList22);
+        System.out.print(listZveri.size());
+        vividRazdelitela();
+        vividRazdelitela();
+        vividSimvolovCHE(pustoi);
+       vividSimvolov((LinkedList) pustoi);
 
 
 
@@ -165,13 +197,6 @@ public class RabotaS_LinkedList {
            // list.add(iterator.previous());
            // list.set(iterator.nextIndex(),addWhat + iterator.next());
         }
-        for (Object str: list){
-        //    list.add(str);
-        }
-
-        for (int i=0; i<list.size();i++){
-           // list.add()
-        }
 
         return list;
     }
@@ -211,6 +236,15 @@ public class RabotaS_LinkedList {
         for (Object ch : list){
             System.out.println(ch);
         }
+    }
+
+    public static void vividSimvolovCHE(List<Character> character){
+        System.out.println("Вданном листе содержится: ");
+       for (Character ch : character){
+           System.out.println(ch);
+       }
+
+
     }
 
 } // конец класса
