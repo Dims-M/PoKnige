@@ -120,6 +120,12 @@ public class RabotaS_LinkedList {
         vividRazdelitela();
         vividSimvolovCHE(pustoi);
        vividSimvolov((LinkedList) pustoi);
+       vividRazdelitela();
+        vividLista(zveriList22);
+
+        deleteMetod(zveriList22,1);
+        vividLista(zveriList22);
+
 
 
 
@@ -229,8 +235,23 @@ public class RabotaS_LinkedList {
     }
 
 
-    //Работа с символами
+    //Удаление данных из листа
 
+    public static void deleteMetod(LinkedList list, int indexks){
+        System.out.println("Удаляем явейку под индексом "+ indexks);
+
+        for (int i = 0; i < list.size(); i++){
+
+            if (i == indexks){
+                System.out.println("Удаление ячейки завершено "+list.get(indexks));
+                list.remove(i);
+            }
+        }
+
+    }
+
+
+    //Работа с символами
     public static void vividSimvolov(LinkedList list){
         System.out.println("Вданном листе содержится: ");
         for (Object ch : list){
@@ -243,8 +264,6 @@ public class RabotaS_LinkedList {
        for (Character ch : character){
            System.out.println(ch);
        }
-
-
     }
 
 } // конец класса
