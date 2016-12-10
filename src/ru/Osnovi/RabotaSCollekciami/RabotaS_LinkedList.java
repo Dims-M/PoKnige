@@ -1,9 +1,7 @@
 package ru.Osnovi.RabotaSCollekciami;
 
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Created by User on 004 04.12.16.
@@ -15,9 +13,32 @@ public class RabotaS_LinkedList {
         String [] zveri ={"кот","пингвин","волк","ежигг","дракон"};
         String [] zveri1 ={"удав","волк","ЕжиК","Ниблнр"};
 
+        String [] kriminalChivo = {"Мия ","Джулс ","Винсенс ","Марселлас ","Бутч"};
+
+        Character [] simvoli = {'П','Р','И','В','Е','Т',};
+
+        LinkedList linkedListSimvol = new LinkedList(Arrays.asList(simvoli));
+
+        // ВНИМАНИЕ
+        // Также можно передовать в Лист в качестве параметра Аррей лист
+        LinkedList linkedList123 =  new LinkedList(Arrays.asList(kriminalChivo));
+        LinkedList linkedListCon =  new LinkedList(Arrays.asList(kriminalChivo));
+
+        // Дакже мы всегда можем добавить в лист новое значение в конец списка
+        linkedList123.add("Кунц");
+
+        // Дакже мы всегда можем добавить в лист новое значение в конец списка
+        linkedList123.addFirst("Yfit pyfxtybt");
+
+        // Конвертация списка обратно в Аррей лист
+        kriminalChivo = (String[]) linkedList123.toArray(new String[linkedList123.size()]);
+        // В переменную массива = приводим тип к листу. потом создаем стринговый массив с размером такойже как длина Листа
+
+
         // линкин лист для хранения связанных списков
         LinkedList listZveri = new LinkedList<>();
         List<String> listZveri2 = new LinkedList<>();
+        List<String> chivo = new LinkedList<>();
 
         zapolnenieLista(zveri, (LinkedList) listZveri);
         vividRazdelitela();
@@ -41,6 +62,31 @@ public class RabotaS_LinkedList {
         vividRazdelitela();
         reversList(listZveri);
         vividLista(listZveri);
+        vividRazdelitela();
+        vividRazdelitela();
+        vividRazdelitela();
+        zapolnenieLista(kriminalChivo, (LinkedList) chivo);
+        vividLista((LinkedList) chivo);
+        vividRazdelitela();
+        vividLista((LinkedList) linkedList123);
+        vividRazdelitela();
+        addZnach(linkedList123, "Кунц212");
+        vividLista((LinkedList) linkedList123);
+        vividRazdelitela();
+        addZnachFerst(linkedList123,"Персонажи фильма 'Криминальное чтиво':");
+        vividLista((LinkedList) linkedList123);
+        vividRazdelitela();
+        vividЬффышa(kriminalChivo);
+        vividRazdelitela();
+        konxertationListV_Massiv(kriminalChivo,linkedList123);
+        vividЬффышa(kriminalChivo);
+        vividRazdelitela();
+        vividSimvolov(linkedListSimvol);
+        System.out.println( konxertationListV_MassivCharacter(simvoli,linkedListSimvol));
+        vividSimvolov(linkedListSimvol);
+        reversList(linkedListSimvol);
+
+
 
 
 
@@ -60,6 +106,12 @@ public class RabotaS_LinkedList {
 
     public static void vividLista (LinkedList list){
         for (Object str: list){
+            System.out.println(str);
+        }
+    }
+
+    public static void vividЬффышa (Object [] object){
+        for (Object str: object){
             System.out.println(str);
         }
     }
@@ -104,14 +156,15 @@ public class RabotaS_LinkedList {
 
         //с помощью итераторов проходим по списку в качестве параметра указали размерлиста
         ListIterator iterator = (ListIterator) list.listIterator(list.size());
-        String addWhat ="Я - ";
+        String addWhat = "Я - ";
         while (iterator.hasPrevious()){
             // метод hasPrevious Проверяет есть ли у списка доступный следущий элемент
-            System.out.printf("%s ", iterator.previous() );
+           // System.out.printf("%s ", iterator.previous() );
+            System.out.println();
+            System.out.println(addWhat+ iterator.previous());
            // list.add(iterator.previous());
            // list.set(iterator.nextIndex(),addWhat + iterator.next());
         }
-
         for (Object str: list){
         //    list.add(str);
         }
@@ -120,9 +173,44 @@ public class RabotaS_LinkedList {
            // list.add()
         }
 
-
         return list;
     }
 
+//Конвертируем Список в массив"
+    public static Object [] konxertationListV_Massiv (Object [] o, LinkedList list){
+        System.out.println("Конвертируем Список в массив");
+        o = list.toArray(new String[list.size()]);
+        return o;
+
+
+    }
+
+    public static Object [] konxertationListV_MassivCharacter (Object [] o, LinkedList list){
+        System.out.println("Конвертируем Список в массив");
+        o = list.toArray(new Character[list.size()]);
+        return o;
+
+
+    }
+
+    public static void addZnach(LinkedList list, Object ojekt){
+        list.add(ojekt);
+        System.out.println("Добавили новый объект "+ ojekt);
+    }
+
+    public static void addZnachFerst(LinkedList list, Object ojekt){
+        list.addFirst(ojekt);
+        System.out.println("Добавили новый объект в НАЧАЛО списка "+ ojekt);
+    }
+
+
+    //Работа с символами
+
+    public static void vividSimvolov(LinkedList list){
+        System.out.println("Вданном листе содержится: ");
+        for (Object ch : list){
+            System.out.println(ch);
+        }
+    }
 
 } // конец класса
