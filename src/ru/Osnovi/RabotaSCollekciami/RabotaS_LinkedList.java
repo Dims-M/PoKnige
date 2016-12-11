@@ -1,6 +1,7 @@
 package ru.Osnovi.RabotaSCollekciami;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by User on 004 04.12.16.
@@ -79,6 +80,12 @@ public class RabotaS_LinkedList {
         vividLista(listZveri);
         System.out.println("Длинна Листа = "+ counntlist ((LinkedList) listZveri));
         //System.out.println(udaleniePoindexuSnachaloI_doKinca(listZveri, 0, 3));
+
+        // Метод disjoint сравнивает 2 списка и возращает истину если там нет одинаковых значений!!!
+
+        //Метод frequency ищет в колекции нужное вам значение. Используется через
+        // Collections.frequency(planetList2, "Уран");
+
 
         vividRazdelitela();
         reversList(listZveri);
@@ -162,11 +169,31 @@ public class RabotaS_LinkedList {
         Collections.addAll(planetList2, planet);
         vividЬффышa(planetList2);
         vividRazdelitela();
-        planetList2.add(0,"Уранн");
-        vividЬффышa(planetList2);
-        Collections.replaceAll(planetList2,"Сатурн", "Уранов");
+        planetList2.add(0,"Уран");
+        planetList2.add(1,"Уран");
         vividЬффышa(planetList2);
 
+        Collections.replaceAll(planetList2,"Сатурн", "Уранов");
+        vividЬффышa(planetList2);
+      int tempPovtoreni =  Collections.frequency(planetList2, "Уран");
+        System.out.println("Количество повронени слово 'Уран' = "+tempPovtoreni);
+        vividRazdelitela();
+
+        boolean chek =  Collections.disjoint(planetList, planetList2);
+        System.out.println("Имеются ли уникальные элементы в 2 списках? = " + chek);
+        vividLista(planetList);
+        vividRazdelitela();
+        vividЬффышa(planetList2);
+        Collections.sort(planetList2);
+        vividRazdelitela();
+        vividЬффышa(planetList2);
+        if (chek == false){
+            System.out.println("Есть олинаковые элементы в двух списках");
+        }
+        else System.out.println("Повторений нет");
+        vividRazdelitela();
+        Collections.shuffle(planetList2);
+        vividЬффышa(planetList2);
 
 
 
