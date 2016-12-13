@@ -12,6 +12,8 @@ public class Stek {
         Stack<String> stack = new Stack<String>();
         //Метод пуш позволяет добавить что то в стек
         stack.push("Первонах");
+        stack.push("Второй стек");
+        stack.push("Третий стек");
 
         //****************
         System.out.println("***************");
@@ -19,6 +21,13 @@ public class Stek {
         System.out.println("***************");
         System.out.println("Содежимое Стека = "+stack.peek());
         stack.peek();
+        // получение данных по индексу
+        System.out.println(stack.get(0));
+        // Убрать данные из стека Послежний добавденый стек!!!!!
+        stack.pop();
+
+
+
 
     } // конец метода майн
 
