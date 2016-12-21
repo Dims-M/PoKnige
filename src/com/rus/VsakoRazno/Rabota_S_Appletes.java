@@ -22,10 +22,28 @@ public class Rabota_S_Appletes extends JApplet {
 
         g.setColor(Color.YELLOW);
         g.fillRect(100,100,30,30);
+
+        g.setColor(Color.BLACK);
+
+        g.drawString("Сумма чисел = "+ summ,200,100);
 }
 
    //public static void main(String[] args) {
         String infa =  "Аплеты используют работу java в вашем интернет браузере";
+
+    private double summ;
+    public void init (){
+        String num1 = JOptionPane.showInputDialog("Введи первое число");
+        String num2 = JOptionPane.showInputDialog("Введи второе число");
+
+        // Используем явное приведение типов Строки к Дабл
+        double n1 = Double.parseDouble(num1);
+        double n2 = Double.parseDouble(num2);
+
+        summ = n1 + n2;
+    }
+
+
 
   //  } // конец метода майн
 
