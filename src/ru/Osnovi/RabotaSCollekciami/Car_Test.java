@@ -70,9 +70,9 @@ public class Car_Test {
 
     @Override
     public String toString() {
-        return "В классе Car_Test Содержится \n :" +
-                "Имя='" + Name + '\'' +
-                ",\n  Модель='" + Mjdel + '\'' +
-                ",\n  Стоимость=" + stoimost ;
+        return "В классе Car_Test Содержится :" +
+                "\n  Имя= '" + Name + '\'' +
+                ",\n  Модель= '" + Mjdel + '\'' +
+                ",\n  Стоимость= " + stoimost ;
     }
 }
