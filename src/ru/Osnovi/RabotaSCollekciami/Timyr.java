@@ -17,7 +17,7 @@ public class Timyr {
         // Вывод
         System.out.println("Вывод седержимого обьекта car2_Зoverka : "+  " Имя обьекта "+ car2_Зoverka.getName() + " Модель " +car2_Зoverka.getMjdel()+ " Стоимость "+car2_Зoverka.getStoimost());
 
-        car1_Proverka.setName(null); // Реализованна проверка на null
+       // car1_Proverka.setName(null); // Реализованна проверка на null
         System.out.println(car1_Proverka.getName());
         //   car1_Proverka = null; // обнуление ссылки
       //  System.out.println("Вывод седержимого обьекта car1_Proverka : "+  " Имя обьекта "+ car1_Proverka.getName() + " Модель " +car1_Proverka.getMjdel()+ " Стоимость "+car1_Proverka.getStoimost());
@@ -26,6 +26,11 @@ public class Timyr {
         System.out.println(car1_Proverka.toString());
         razdelitel();
 
+
+        // Выводим содержимое обьекта с помощью переопределенного метода toЫекштп
+        System.out.println("Выводим содержимое обьекта с помощью переопределенного метода toЫекштп");
+        System.out.println(car1_Proverka.toString());
+
         // Сравнение на равенство с помощью метода equals
         // Все ссылочные переменные Обязательно проверять с помщью метода equals !!
         // Метод equals Нужно ПЕРЕОПРЕДЕЛЯТЬ под себя!!!!!
@@ -33,6 +38,17 @@ public class Timyr {
         System.out.println( car1_Proverka.equals(car2_Зoverka));
         sravnenieodject (car1_Proverka, car2_Зoverka);
         sravnenieodject (car1_Proverka, car22_Proverka );
+
+        razdelitel();
+
+        // Выводим содержимое обьекта с помощью переопределенного метода toЫекштп
+        System.out.println("Выводим содержимое обьекта с помощью переопределенного метода toЫекштп");
+        System.out.println(car1_Proverka.toString());
+
+        razdelitel();
+
+        System.out.println("После преопределеия метода туСтринг при выводе обьекта. Атоматичемки срабатывает метод ту стринг");
+        System.out.println(car1_Proverka);
 
     }
 
