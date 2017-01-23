@@ -44,7 +44,12 @@ public class Vsaco {
                 break;
             }
 
-            System.out.println("Введите первое значение и Нажмите ЕНТР");
+            while (couter < kolichestvo){
+                // для расчета количества учасников
+                couter++;
+
+
+            System.out.println("Введите оценку " + couter+ " ученика и Нажмите ЕНТР");
 
             znach1 = scanner.nextInt();
 
@@ -54,23 +59,27 @@ public class Vsaco {
                 znach1 = scanner.nextInt();
             }
 
-            System.out.println("Вы ввели " + znach1);
-            System.out.println("Теперь введите второе значение инажмите ЕНТР ");
-            znach2 = scanner2.nextInt();
+            sredniaSumma +=  znach1;
+//            System.out.println("Вы ввели " + znach1);
+//            System.out.println("Теперь введите второе значение инажмите ЕНТР ");
+//            znach2 = scanner2.nextInt();
+//
+//            if (znach2 < 0) {
+//                System.out.println("Вы ввели некоректное значение!! Значение не должно  быть отрицательным!!");
+//                System.out.println("Введите  новое значение!!");
+//                znach2 = scanner.nextInt();
+//            }
+//
+//            System.out.println("Вы ввели " + znach1 + " И " + znach2);
 
-            if (znach2 < 0) {
-                System.out.println("Вы ввели некоректное значение!! Значение не должно  быть отрицательным!!");
-                System.out.println("Введите  новое значение!!");
-                znach2 = scanner.nextInt();
             }
 
-            System.out.println("Вы ввели " + znach1 + " И " + znach2);
-
-            System.out.println("Производится расчет среднего значения..\n");
-
+            System.out.println("Производится расчет среднего значения учашихся..\n");
             for (int i = 10; i >= 0; i--) {
                 System.out.print(i + ".");
             }
+            System.out.println();
+            System.out.println("Средние значение суммы оценок учеников = "+ sredniaSumma);
             prov = false;
         }
 
