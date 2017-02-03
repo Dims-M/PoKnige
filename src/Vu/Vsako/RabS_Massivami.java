@@ -1,5 +1,6 @@
 package Vu.Vsako;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -12,9 +13,14 @@ public class RabS_Massivami {
         infaOClasse();
        // sozdanieMassiva(10);
         int []  temmppM =  zapolnenieMassivaRandom(sozdanieMassiva(10));
-       vividMassiva(temmppM);
+     //  vividMassiva(temmppM);
        slojemieMassiva(temmppM);
-        vividMassiva(temmppM);
+      //  vividMassiva(temmppM);
+
+        kopirovanieMaasbvaPrimitiv(temmppM);
+        vividMassiva( kopirovanieMaasbvaArreis(temmppM, temmppM.length));
+
+
     }
 
     public static void infaOClasse (){
@@ -48,14 +54,45 @@ public class RabS_Massivami {
     }
 
     public static  int[] slojemieMassiva (int [] massiv){
+        //Сложенние данных в массиве
         int tempInt = 0;
         for (int  i =0; i<massiv.length; i++){
             tempInt += massiv[i];
             massiv[i] = tempInt;
         }
               return  massiv;
-
     }
 
 
-}
+    public static void kopirovanieMaasbvaPrimitiv (int massiv []){
+        // копирование массива с помощью циклов
+        int [] saveMassiv = new int[massiv.length];
+        int count = 0;
+        for (int i = 0; i <massiv.length; i++){
+            System.out.print("*");
+            saveMassiv[i] = massiv[i];
+            count++;
+        }
+
+        for (int tempMasiv1:massiv){
+            count = 0;
+            System.out.println(tempMasiv1);
+        }
+        System.out.println("После копирования");
+        for (int saveMassivi : saveMassiv ){
+            System.out.print("*");
+            System.out.println(saveMassivi);
+
+            count++;
+        }
+    }
+
+    public static int[] kopirovanieMaasbvaArreis (int[] massiv, int chiloSave){
+        // копирование массивов с помощью класса Arrays.copyOf
+        int [] saveMass;
+        saveMass = sozdanieMassiva (chiloSave);
+        saveMass = Arrays.copyOf(massiv , massiv.length);
+        return saveMass;
+    }
+
+} // конец класса
