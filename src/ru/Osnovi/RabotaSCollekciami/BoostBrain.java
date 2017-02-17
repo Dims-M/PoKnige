@@ -3,6 +3,7 @@ package ru.Osnovi.RabotaSCollekciami;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by User on 016 16.02.17.
@@ -15,7 +16,7 @@ public class BoostBrain {
     public static void main(String[] args) throws IOException {
 
         chenieFaila (strokaIstochnika);
-        chenieFaila (strokaIstochnika1);
+       // chenieFaila (strokaIstochnika1);
 
     }
 
@@ -30,11 +31,19 @@ public class BoostBrain {
 
         // маччив дл хрвнения битовых значенй
         byte [] data = new byte[length];
+        // с помощью метода реад записываем данные
         stream.read(data);
+
 
         String text = new String(data);
 
-        System.out.println(text);
+        String [] lines  = text.split("\n");
+       // String [] lines1  = text.split(" ", 2);
+
+        // Вывод данных
+       //System.out.println(text);
+        System.out.println(Arrays.toString(lines));
+      //  System.out.println(Arrays.toString(lines1));
 
 
     }
