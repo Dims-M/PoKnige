@@ -167,5 +167,16 @@ catch (ClassNotFoundException classNotFoundException){
 
     private void sendMessage(String message){
 
+        try {
+          tOutputStream.writeObject("СЕРВЕР - "+message);
+          tOutputStream.flush();
+            showMessage("\n СЕРВЕР - "+message);
+        }
+
+        catch (IOException ioe){
+            chatWindow.append("/n ОШИБКАААААААААА");
+        }
+
+
     }
 }
