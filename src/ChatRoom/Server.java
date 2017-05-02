@@ -177,6 +177,5 @@ catch (ClassNotFoundException classNotFoundException){
             chatWindow.append("/n ОШИБКАААААААААА");
         }
 
-
     }
 }
